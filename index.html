@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        body{
+ background:linear-gradient(rgb(210, 107, 107) , white, rgb(199, 199, 212));
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            border: 3px solid purple; 
+            border-radius: 5px;
+            padding: 5px;
+            background-color: greenyellow;
+            text-align: center;
+        }
+        #agree{
+            margin: 5px;
+            font-weight: bold;
+            width: 30px;
+            text-align: center;
+            color: rgb(20, 5, 5);
+            border: 5px inset rgb(243, 237, 237); 
+            border-radius: 5px;
+            padding: 26px;  
+            font-size: 15px;
+            background: transparent; 
+        }
+        #confirm{
+            margin: 5px;
+            font-weight: bold;
+            width: 30px;
+            text-align: center;
+            color: rgb(20, 5, 5);
+            border: 5px inset rgb(243, 237, 237); 
+            border-radius: 5px;
+            padding: 26px;  
+            font-size: 15px;
+            background: transparent; 
+        }
+        #start{
+            width: 100px;
+            height: 30px;
+            background-color: rgb(11, 169, 241); 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 5px;
+            display: inline-block;
+        }
+    </Style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Quiz Game</h1>
+        <h3>10 GK Question of 10 Marks</h3>
+        <input type="checkbox" id="agree">Agree to the terms and conditions<br><br>
+        <input type="checkbox" id="confirm">I am not a robot<br><br>
+        <a href="index.html" id="start">Start</a>
+    </div>
+    <script>
+       const startButton = document.getElementById('start');
+       const agreeCheckbox = document.getElementById('agree');
+         const confirmCheckbox = document.getElementById('confirm');
+         startButton.addEventListener('click', function(event) {
+              if (!agreeCheckbox.checked || !confirmCheckbox.checked) {
+                event.preventDefault(); // Prevent the default action of the link
+                alert('Please agree to the terms and conditions and confirm you are not a robot.');
+              }
+            });
+    </script>
+</body>
+</html>
